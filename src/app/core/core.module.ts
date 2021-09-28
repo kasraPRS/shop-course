@@ -1,8 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HTTP_INTERCEPTORS, HttpRequest, HttpResponse} from "@angular/common/http";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS, HttpRequest, HttpResponse } from "@angular/common/http";
 import { HttpRequestInterceptor } from './Interceptors/http-request.interceptors';
 import { HttpResponseInterceptors } from './Interceptors/http-response.interceptor';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [],
@@ -19,9 +20,11 @@ import { HttpResponseInterceptors } from './Interceptors/http-response.intercept
     }
   ],
   imports: [
-  
-CommonModule
+    CommonModule
   ],
+  exports: [
+    LayoutModule
+  ]
 })
 export class CoreModule {
 }
