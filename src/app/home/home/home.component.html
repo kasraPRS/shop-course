@@ -1,1 +1,12 @@
-<p>home works!</p>
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="Ex. Pizza" formControlName="food">
+    </mat-form-field>
+    <button mat-button color="primary">Submit</button>
+</form>
+<div *ngIf="this.foods.length > 0">
+    <mat-list *ngFor="let i of foods;">
+        <mat-list-item>{{i}}</mat-list-item>
+    </mat-list>
+</div>
